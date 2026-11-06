@@ -411,3 +411,184 @@ equipo, sin IA.
 - Robertson, S., & Zaragoza, H. (2009). The probabilistic relevance framework: BM25 and beyond. *Foundations and Trends in Information Retrieval, 3*(4), 333–389.
 - Streamlit. (2026). *Streamlit documentation*. https://docs.streamlit.io
 - Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2023). ReAct: Synergizing reasoning and acting in language models. En *International Conference on Learning Representations*. https://arxiv.org/abs/2210.03629
+
+
+## Validación y pruebas del sistema
+
+Se realizaron pruebas funcionales y técnicas al Agente de Trámites de la Municipalidad de Curacaví, con el objetivo de comprobar el correcto funcionamiento de sus reglas de negocio, herramientas, recuperación de información (RAG), gestión de solicitudes, seguridad y generación de respuestas.
+
+Las validaciones se ejecutaron mediante escenarios controlados en Google Colab, utilizando datos de prueba y situaciones simuladas de atención municipal.
+
+### 1. Validación de escenarios funcionales
+
+Se ejecutaron **22 escenarios de prueba**, evaluando las reglas aplicadas, las acciones seleccionadas, las herramientas utilizadas y las escrituras realizadas por el agente.
+
+| Indicador | Resultado |
+|---|---:|
+| Escenarios ejecutados | 22 |
+| Reglas correctas | 22/22 (100 %) |
+| Acciones correctas | 22/22 (100 %) |
+| Herramientas correctas | 22/22 (100 %) |
+| Escrituras correctas | 22/22 (100 %) |
+
+Los escenarios contemplaron:
+
+- Registro de trámites con documentación completa.
+- Detección de antecedentes faltantes.
+- Continuidad de solicitudes mediante folios.
+- Replanificación cuando una hora deja de estar disponible.
+- Inscripción en lista de espera.
+- Escalamiento de solicitudes con plazos vencidos.
+- Aprobación humana antes de ejecutar acciones restringidas.
+- Reingreso de solicitudes con historial previo.
+- Protección de información personal.
+- Derivación de trámites fuera de la competencia municipal.
+- Consulta de estados y folios inexistentes.
+- Consultas sobre requisitos, plazos y normativa.
+- Validación de patentes comerciales.
+- Solicitudes de aclaración cuando no se reconoce un trámite.
+
+### 2. Validación de reglas de negocio
+
+El sistema cuenta con 10 reglas de decisión (R1–R10), utilizadas para determinar las acciones correspondientes según la situación presentada por el vecino.
+
+| Regla | Descripción | Acción |
+|---|---|---|
+| R1 | Seguridad y privacidad | Rechazar solicitud riesgosa |
+| R2 | Fuera del alcance municipal | Derivar a institución externa |
+| R3 | Plazo vencido | Escalar con aprobación humana |
+| R4 | Consulta de estado | Informar estado |
+| R5 | Consulta de información | Responder consulta |
+| R6 | Faltan antecedentes | Solicitar antecedentes |
+| R7 | Sin horas disponibles | Inscribir en lista de espera |
+| R8 | Reingreso con historial | Reingreso guiado |
+| R9 | Trámite estándar | Registrar trámite |
+| R10 | Aclarar solicitud | Solicitar aclaración |
+
+En los 22 escenarios registrados, la regla seleccionada coincidió con el resultado esperado.
+
+### 3. Validación de seguridad y privacidad
+
+Se probaron situaciones donde el usuario intentaba modificar las instrucciones del agente o solicitar información personal perteneciente a terceros.
+
+Las pruebas contemplaron:
+
+- Intentos de manipulación de instrucciones.
+- Solicitudes de RUT y teléfonos de otros usuarios.
+- Consultas que no autorizaban el acceso a información privada.
+- Prevención de acciones de escritura ante solicitudes riesgosas.
+
+En los dos casos que contaban con evaluación específica de privacidad, el resultado fue del 100 %.
+
+### 4. Validación del sistema RAG
+
+Se evaluó el mecanismo de recuperación de información mediante cuatro configuraciones experimentales, identificadas como A, B, C y D.
+
+El sistema utiliza información organizada en cuatro índices:
+
+- Municipal.
+- Leyes.
+- ChileAtiende.
+- Casos resueltos.
+
+Se compararon métricas de recuperación para determinar qué configuración entregaba los resultados más relevantes.
+
+| Configuración | Recall | Hit | MRR |
+|---|---:|---:|---:|
+| A. Diseño base | 0,750 | 0,929 | 0,580 |
+| B. Índices separados | 0,845 | 0,929 | 0,696 |
+| C. Umbrales por índice | 0,917 | 1,000 | 0,711 |
+| D. Búsqueda híbrida | **0,929** | **1,000** | **0,851** |
+
+La configuración D obtuvo los mejores resultados registrados, alcanzando un Recall de 92,9 %, un Hit de 100 % y un MRR de 0,851.
+
+Esto demuestra una mejora en la recuperación de información relevante mediante la combinación de búsqueda vectorial y búsqueda léxica.
+
+### 5. Validación de respuestas del agente
+
+Se evaluaron 18 preguntas para comprobar la selección de herramientas, las fuentes utilizadas, la validez de las citas y la calidad de las respuestas.
+
+| Métrica | Resultado |
+|---|---:|
+| Preguntas evaluadas | 18 |
+| Herramienta correcta | 100 % |
+| Fuentes citadas | 100 % |
+| Citas válidas | 100 % |
+| Tipo de fuente correcto | 100 % (14 casos evaluables) |
+| Privacidad | 100 % (2 casos evaluables) |
+| Correctness | 66 % (12 casos evaluables) |
+| Faithfulness | 67 % (12 casos evaluables) |
+| Latencia promedio | 9,44 segundos |
+
+**Análisis:** el agente presentó resultados positivos en la selección de herramientas y utilización de fuentes. Sin embargo, las métricas Correctness y Faithfulness muestran que todavía existen oportunidades de mejora en la precisión y fidelidad de algunas respuestas.
+
+Seis de las 18 preguntas no contaron con una evaluación interpretable del juez LLM, por lo que las métricas de calidad se calcularon sobre 12 respuestas.
+
+### 6. Comparación entre agente híbrido y LLM puro
+
+Se realizó una comparación experimental entre el agente híbrido (Planner + LLM) y un agente basado únicamente en LLM (`create_agent`).
+
+| Indicador | Híbrido | LLM puro |
+|---|---:|---:|
+| Herramientas correctas | 100 % | 67 % |
+| Escrituras correctas | 100 % | 0 % |
+| Escrituras indebidas | 0 | 0 |
+| Latencia media | 0,19 s | 9,21 s |
+
+Esta comparación se realizó sobre tres escenarios registrados en el notebook.
+
+Los resultados muestran un mejor comportamiento del enfoque híbrido en la selección de herramientas y ejecución de acciones dentro de esa muestra experimental.
+
+### 7. Validación de persistencia y memoria
+
+Se realizaron pruebas para comprobar la continuidad de las solicitudes y la conservación de información relevante.
+
+Se verificaron los siguientes aspectos:
+
+- Recuperación del historial de solicitudes.
+- Continuidad de conversaciones anteriores.
+- Recuperación de folios.
+- Conservación de antecedentes asociados a una solicitud.
+- Persistencia local mediante SQLite y Chroma.
+- Compresión de conversaciones extensas.
+
+### 8. Resultado general de las validaciones
+
+De acuerdo con los resultados almacenados en la ejecución del notebook de Google Colab, se obtuvo el siguiente resumen:
+
+| Validación | Resultado |
+|---|---|
+| Escenarios funcionales | 22/22 correctos |
+| Reglas de negocio | 22/22 correctas |
+| Acciones seleccionadas | 22/22 correctas |
+| Herramientas utilizadas | 22/22 correctas |
+| Recuperación RAG (Recall) | 92,9 % |
+| Recuperación RAG (Hit) | 100 % |
+| Citas válidas | 100 % |
+| Preguntas evaluadas | 18 |
+| Latencia promedio | 9,44 segundos |
+
+**Conclusión de las pruebas:**
+
+Los resultados obtenidos permiten comprobar que el prototipo cumple satisfactoriamente con los escenarios funcionales y reglas de negocio definidos para las pruebas. También demuestra capacidad de recuperación documental, selección de herramientas, gestión de solicitudes y protección frente a determinados intentos de acceso indebido a información.
+
+No obstante, las métricas de calidad semántica de las respuestas (Correctness y Faithfulness) indican que es necesario continuar mejorando la precisión de las respuestas y ampliar los escenarios de privacidad.
+
+Por lo tanto, el sistema presenta resultados favorables como prototipo académico, pero requiere nuevas pruebas y validaciones antes de considerarse apto para un entorno municipal de producción.
+
+### 9. Evidencias de las pruebas
+
+Los resultados y archivos generados durante las evaluaciones se encuentran en la carpeta `EVIDENCIAS_TEST`, incluyendo:
+
+- `escenarios_offline.csv`
+- `escenarios_llm.csv`
+- `respuestas_llm.csv`
+- `resumen_respuestas.csv`
+- `llm_puro.csv`
+- `recuperacion_detalle_local.csv`
+- `recuperacion_resumen_local.csv`
+- `grafico_recuperacion.png`
+- `grafico_respuestas.png`
+- `cache_respuestas_llm.json`
+
+Estos archivos permiten consultar los resultados registrados y respaldar las métricas presentadas en esta documentación.
