@@ -1,0 +1,21 @@
+# Secretos (nunca se suben)
+.env
+**/.env
+.streamlit/secrets.toml
+# Entorno y cachés
+**/.venv/
+**/venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+# Datos que se regeneran con: python -m scripts.preparar_datos
+**/data/runtime/
+# Videos pesados (subir a Drive y enlazar en el README)
+EVIDENCIAS_TEST/videos/
+*.mp4
+# Archivos temporales de Word/PowerPoint abiertos
+~$*
+.DS_Store

@@ -1,0 +1,4 @@
+id,herramientas_ok,escrituras_ok,escrituras_indebidas,n_llamadas,latencia_s
+E01,True,False,0,4,9.57
+E02,True,False,0,3,8.04
+E03,False,False,0,3,10.02

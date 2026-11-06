@@ -1,0 +1,22 @@
+sequenceDiagram
+    autonumber
+    actor V as Vecino/a
+    participant A as Agente (LangGraph)
+    participant H as Herramientas
+    participant M as Memoria
+    V->>A: "Quiero mi primera licencia B. Tengo cédula, fotos..."
+    A->>H: verificar_requisitos + consultar_agenda
+    H-->>A: falta certificado de estudios
+    A->>A: planificar → R6 Faltan antecedentes
+    A->>H: registrar_solicitud (Observada) + notificar_vecino
+    A->>M: guarda trámite, documentos y folio en el hilo
+    A-->>V: "Faltan estudios [M1]. Folio SOL-2026-0031. 5 días [L1]"
+    Note over V,M: El vecino cierra la app y vuelve otro día con el mismo N° de atención
+    V->>A: "Ya tengo el certificado de estudios"
+    M-->>A: retoma trámite, documentos y folio
+    A->>A: planificar → R9 Trámite estándar
+    A->>H: actualizar_solicitud + agendar_hora
+    H-->>A: la hora fue tomada por otra persona
+    A->>A: REPLANIFICAR → nueva consulta de agenda
+    A->>H: agendar_hora (otro cupo) + notificar_vecino
+    A-->>V: "Solicitud ingresada. Hora reservada: 24-11 10:30"

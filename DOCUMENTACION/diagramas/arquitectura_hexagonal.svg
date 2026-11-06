@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 1230" width="2040" height="1230">
+<defs><marker id="punta" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="12" refY="6.5" orient="auto"><path d="M0,0 L13,6.5 L0,13 z" fill="#3A444C"/></marker></defs>
+<rect width="2040" height="1230" fill="#FFFFFF"/>
+<text x="1020.0" y="50.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#1F2A2E" text-anchor="middle">Arquitectura hexagonal del agente · puertos y adaptadores</text>
+<text x="1020.0" y="82.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#4A5560" text-anchor="middle">El núcleo no conoce la tecnología de afuera: cambiar SQLite/Chroma por PostgreSQL/pgvector no cambia ninguna decisión (22/22 escenarios con ambos)</text>
+<line x1="1147" y1="260" x2="1300" y2="260" stroke="#12355B" stroke-width="3"/>
+<line x1="1207" y1="365" x2="1300" y2="365" stroke="#12355B" stroke-width="3"/>
+<line x1="1268" y1="470" x2="1300" y2="470" stroke="#12355B" stroke-width="3"/>
+<line x1="1207" y1="755" x2="1300" y2="755" stroke="#12355B" stroke-width="3"/>
+<line x1="1144" y1="865" x2="1300" y2="865" stroke="#12355B" stroke-width="3"/>
+<polygon points="1320.0,560.0 1130.0,889.1 750.0,889.1 560.0,560.0 750.0,230.9 1130.0,230.9" fill="#E8F0FB" stroke="#2B6CC4" stroke-width="3"/>
+<polygon points="1135.0,560.0 1037.5,728.9 842.5,728.9 745.0,560.0 842.5,391.1 1037.5,391.1" fill="#12355B" stroke="#12355B" stroke-width="3"/>
+<text x="940" y="266.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#2B6CC4" text-anchor="middle">APLICACIÓN · agente/aplicacion/</text>
+<text x="940" y="296.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2A2E" text-anchor="middle">Orquestador LangGraph · orquestador.py</text>
+<text x="940" y="322.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">percibir → diagnosticar → planificar →</text>
+<text x="940" y="340.48" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">ejecutar → responder → memorizar</text>
+<text x="662" y="520.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">NLU</text>
+<text x="662" y="539.8" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">nlu.py</text>
+<text x="662" y="610.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Redacción</text>
+<text x="662" y="629.8" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">con citas</text>
+<text x="662" y="649.6" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">redaccion.py</text>
+<text x="940" y="800.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2A2E" text-anchor="middle">Puertos · puertos.py</text>
+<text x="940" y="825.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">interfaces que el núcleo necesita;</text>
+<text x="940" y="843.48" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">resumen de conversaciones · resumen.py</text>
+<text x="940" y="428.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">DOMINIO</text>
+<text x="940" y="448.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#D6E2F0" text-anchor="middle">agente/dominio/</text>
+<text x="940" y="478.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">modelo.py</text>
+<text x="940" y="497.8" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#FFFFFF" text-anchor="middle">Solicitud · EstadoSolicitud</text>
+<text x="940" y="517.6" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#FFFFFF" text-anchor="middle">Folio · Cupo</text>
+<text x="940" y="570.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">planner.py · 10 reglas</text>
+<text x="940" y="589.8" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#FFFFFF" text-anchor="middle">plazos · requisitos · citas</text>
+<text x="940" y="640.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#D6E2F0" text-anchor="middle">sin LangChain ni bases de datos</text>
+<text x="940" y="657.16" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#D6E2F0" text-anchor="middle">(verificado con pruebas)</text>
+<rect x="30" y="130" width="440" height="830" rx="16" fill="#F4F6F8" stroke="#C9D1D9" stroke-width="2"/>
+<text x="52" y="166.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="700" fill="#4A5560" text-anchor="start">ADAPTADORES DE ENTRADA</text>
+<text x="52" y="190.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="start">agente/adaptadores/entrada/</text>
+<rect x="55" y="215" width="390" height="110" rx="10" fill="#FFF3D6" stroke="#D4A017" stroke-width="2.4"/>
+<text x="250.0" y="255.45" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Vecino/a · Funcionario/a</text>
+<text x="250.0" y="275.25" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">Streamlit (app.py, solo vista)</text>
+<text x="250.0" y="295.05" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">→ ControladorAtencion</text>
+<polyline points="445,270.0 721.4315780649915,270.0" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="55" y="365" width="390" height="110" rx="10" fill="#FDECE4" stroke="#E07A2E" stroke-width="2.4"/>
+<text x="250.0" y="405.45" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">17 herramientas @tool (LangChain)</text>
+<text x="250.0" y="425.25" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">consulta · escritura · razonamiento</text>
+<text x="250.0" y="445.05" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">las usa el grafo o un LLM</text>
+<polyline points="445,420.0 634.8290376865476,420.0" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="55" y="515" width="390" height="90" rx="10" fill="#FFF3D6" stroke="#D4A017" stroke-width="2.4"/>
+<text x="250.0" y="555.35" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Notebook de Google Colab</text>
+<text x="250.0" y="575.15" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">DOCUMENTACION/agente_tramites_colab</text>
+<polyline points="445,560.0 554.0,560.0" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="55" y="645" width="390" height="90" rx="10" fill="#FFF3D6" stroke="#D4A017" stroke-width="2.4"/>
+<text x="250.0" y="685.35" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Evaluación y scripts</text>
+<text x="250.0" y="705.15" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">evaluacion.py · preparar_datos · evaluar</text>
+<polyline points="445,690.0 629.0555349946513,690.0" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="55" y="775" width="390" height="110" rx="10" fill="#FFF3D6" stroke="#D4A017" stroke-width="2.4"/>
+<text x="250.0" y="815.45" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Pruebas pytest</text>
+<text x="250.0" y="835.25" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">dobles de prueba (mocks)</text>
+<text x="250.0" y="855.0500000000001" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">LLMSimulado · HashingEmbeddings</text>
+<polyline points="445,830.0 709.884572681199,830.0" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<text x="250" y="935.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">≈ @RestController en Spring</text>
+<text x="1405" y="166.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#12355B" text-anchor="middle">PUERTOS · aplicacion/puertos.py</text>
+<text x="1405" y="190.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">interfaces (Protocol)</text>
+<rect x="1555" y="130" width="225" height="555" rx="16" fill="none" stroke="#2E8B57" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1795" y="130" width="225" height="555" rx="16" fill="none" stroke="#5B3FA0" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="1667" y="164.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#2E8B57" text-anchor="middle">salida/postgres/</text>
+<text x="1667" y="188.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5560" text-anchor="middle">Docker (PERSISTENCIA)</text>
+<text x="1907" y="164.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#5B3FA0" text-anchor="middle">salida/local/</text>
+<text x="1907" y="188.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5560" text-anchor="middle">Colab y venv</text>
+<rect x="1300" y="220" width="210" height="80" rx="10" fill="#FFFFFF" stroke="#12355B" stroke-width="2.4"/>
+<text x="1405.0" y="255.35" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">RegistroMunicipal</text>
+<text x="1405.0" y="275.15" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">largo plazo</text>
+<rect x="1570" y="215" width="195" height="90" rx="10" fill="#E6F4EC" stroke="#2E8B57" stroke-width="2.4"/>
+<text x="1667.5" y="264.9" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">RegistroPostgres</text>
+<rect x="1810" y="215" width="195" height="90" rx="10" fill="#F1EEF9" stroke="#5B3FA0" stroke-width="2.4"/>
+<text x="1907.5" y="264.9" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">RegistroSQLite</text>
+<polyline points="1510,260 1568,260" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="1300" y="325" width="210" height="80" rx="10" fill="#FFFFFF" stroke="#12355B" stroke-width="2.4"/>
+<text x="1405.0" y="360.35" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">BuscadorFuentes</text>
+<text x="1405.0" y="380.15000000000003" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">memoria semántica</text>
+<rect x="1570" y="320" width="195" height="90" rx="10" fill="#E6F4EC" stroke="#2E8B57" stroke-width="2.4"/>
+<text x="1667.5" y="351.41999999999996" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">IndicePgvector</text>
+<text x="1667.5" y="369.9" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">pgvector + texto</text>
+<text x="1667.5" y="388.37999999999994" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">completo (español)</text>
+<rect x="1810" y="320" width="195" height="90" rx="10" fill="#F1EEF9" stroke="#5B3FA0" stroke-width="2.4"/>
+<text x="1907.5" y="360.65999999999997" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">IndiceChroma</text>
+<text x="1907.5" y="379.14" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">Chroma + BM25</text>
+<polyline points="1510,365 1568,365" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="1300" y="430" width="210" height="80" rx="10" fill="#FFFFFF" stroke="#12355B" stroke-width="2.4"/>
+<text x="1405.0" y="465.35" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Memoria de</text>
+<text x="1405.0" y="485.15000000000003" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">conversación</text>
+<rect x="1570" y="425" width="195" height="90" rx="10" fill="#E6F4EC" stroke="#2E8B57" stroke-width="2.4"/>
+<text x="1667.5" y="465.65999999999997" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">PostgresSaver</text>
+<text x="1667.5" y="484.14" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">(LangGraph)</text>
+<rect x="1810" y="425" width="195" height="90" rx="10" fill="#F1EEF9" stroke="#5B3FA0" stroke-width="2.4"/>
+<text x="1907.5" y="465.65999999999997" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">SqliteSaver</text>
+<text x="1907.5" y="484.14" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">(LangGraph)</text>
+<polyline points="1510,470 1568,470" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<path d="M1572,558 L1572,657 A95.0,13 0 0 0 1762,657 L1762,558" fill="#E6F4EC" stroke="#2E8B57" stroke-width="2.4"/>
+<ellipse cx="1667.0" cy="558" rx="95.0" ry="13" fill="#E6F4EC" stroke="#2E8B57" stroke-width="2.4"/>
+<text x="1667.0" y="600.6999999999999" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">PostgreSQL 16</text>
+<text x="1667.0" y="619.18" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">+ pgvector</text>
+<text x="1667.0" y="637.66" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">contenedor db</text>
+<path d="M1812,558 L1812,657 A95.0,13 0 0 0 2002,657 L2002,558" fill="#F1EEF9" stroke="#5B3FA0" stroke-width="2.4"/>
+<ellipse cx="1907.0" cy="558" rx="95.0" ry="13" fill="#F1EEF9" stroke="#5B3FA0" stroke-width="2.4"/>
+<text x="1907.0" y="600.6999999999999" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">SQLite + Chroma</text>
+<text x="1907.0" y="619.18" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">archivos en</text>
+<text x="1907.0" y="637.66" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">data/runtime/</text>
+<rect x="1300" y="715" width="210" height="80" rx="10" fill="#FFFFFF" stroke="#12355B" stroke-width="2.4"/>
+<text x="1405.0" y="750.35" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">ModeloLenguaje</text>
+<text x="1405.0" y="770.15" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="middle">LLM</text>
+<rect x="1570" y="705" width="450" height="100" rx="10" fill="#FDECE4" stroke="#E07A2E" stroke-width="2.4"/>
+<text x="1795.0" y="741.42" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2A2E" text-anchor="middle">salida/llm/ · ChatOpenAI → OpenRouter</text>
+<text x="1795.0" y="759.9" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">agente: Nemotron · juez: flint (otra empresa)</text>
+<text x="1795.0" y="778.38" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">o None: modo offline con plantillas</text>
+<polyline points="1510,755 1568,755" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="1300" y="830" width="210" height="70" rx="10" fill="#FFFFFF" stroke="#12355B" stroke-width="2.4"/>
+<text x="1405.0" y="870.25" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2A2E" text-anchor="middle">Reloj</text>
+<rect x="1570" y="825" width="450" height="80" rx="10" fill="#FFFFFF" stroke="#4A5560" stroke-width="2.4"/>
+<text x="1795.0" y="860.66" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">fecha del sistema (zona horaria de Chile)</text>
+<text x="1795.0" y="879.14" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2A2E" text-anchor="middle">o FECHA_REFERENCIA fija (demos y pruebas)</text>
+<polyline points="1510,865 1568,865" fill="none" stroke="#3A444C" stroke-width="2.4" marker-end="url(#punta)"/>
+<rect x="30" y="990" width="1990" height="92" rx="10" fill="#FFFFFF" stroke="#4A5560" stroke-width="2.4"/>
+<text x="1025.0" y="1031.04" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2A2E" text-anchor="middle">agente/configuracion/contenedor.py · composición (≈ @Configuration de Spring con perfiles)</text>
+<text x="1025.0" y="1052.1599999999999" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#1F2A2E" text-anchor="middle">lee PERSISTENCIA, crea los adaptadores y los inyecta por constructor en el agente, las herramientas y el controlador · nada usa variables globales</text>
+<polyline points="940,990 940,944" fill="none" stroke="#3A444C" stroke-width="2.4" stroke-dasharray="8 6" marker-end="url(#punta)"/>
+<text x="1540" y="965.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5560" text-anchor="middle">elige los adaptadores de un lado o del otro</text>
+<rect x="40" y="1120" width="30" height="30" rx="6" fill="#12355B" stroke="#12355B" stroke-width="2.4"/>
+<text x="82" y="1141.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="start">Dominio ≈ @Entity y servicios de dominio</text>
+<rect x="540" y="1120" width="30" height="30" rx="6" fill="#FFFFFF" stroke="#12355B" stroke-width="2.4"/>
+<text x="582" y="1141.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="start">Puerto ≈ interfaz ...Repository</text>
+<rect x="1040" y="1120" width="30" height="30" rx="6" fill="#E6F4EC" stroke="#2E8B57" stroke-width="2.4"/>
+<text x="1082" y="1141.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="start">Adaptador de salida ≈ implementación @Repository</text>
+<rect x="1540" y="1120" width="30" height="30" rx="6" fill="#FFF3D6" stroke="#D4A017" stroke-width="2.4"/>
+<text x="1582" y="1141.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#1F2A2E" text-anchor="start">Adaptador de entrada ≈ @RestController</text>
+<text x="1020.0" y="1200.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#4A5560" text-anchor="middle">Las pruebas de contrato (tests/integracion/) corren la misma batería contra ambos adaptadores de cada puerto.</text>
+</svg>

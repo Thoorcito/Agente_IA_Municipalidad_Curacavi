@@ -1,0 +1,41 @@
+flowchart TB
+    V([Vecino/a]) -->|mensaje| UI["Streamlit (vista)<br/>→ ControladorAtencion"]
+    F([Funcionario/a]) -->|aprueba o rechaza| UI
+    UI --> PE
+
+    subgraph AG["Agente · LangGraph"]
+        PE["percibir<br/>intención, trámite, folio,<br/>documentos, riesgos"] --> DI["diagnosticar<br/>reúne hechos"]
+        DI --> PL["planificar<br/>10 reglas priorizadas"]
+        PL --> AP{"¿requiere<br/>aprobación?"}
+        AP -->|sí| HI["aprobación humana<br/>(interrupt)"]
+        AP -->|no| EJ["ejecutar<br/>plan de pasos"]
+        HI --> EJ
+        EJ -->|"condición cambió<br/>(replanificar)"| DI
+        EJ --> RE["responder<br/>citas por tipo de fuente"]
+        RE --> ME["memorizar"]
+    end
+
+    subgraph HE["Herramientas (17)"]
+        HC["Consulta · 7<br/>búsquedas por fuente, folio,<br/>historial, agenda, casos"]
+        HR["Razonamiento · 4<br/>requisitos, plazos hábiles,<br/>contraste de fuentes, fecha"]
+        HW["Escritura · 6<br/>registrar, actualizar, agendar,<br/>escalar, lista de espera, notificar"]
+    end
+
+    subgraph MEM["Memoria · adaptadores intercambiables (Docker · local)"]
+        CP[("Corto plazo<br/>checkpointer LangGraph<br/>PostgreSQL · SQLite<br/>+ resumen")]
+        LP[("Largo plazo<br/>registro municipal<br/>PostgreSQL · SQLite")]
+        SE[("Semántica<br/>pgvector · Chroma<br/>leyes · municipal ·<br/>chileatiende · casos")]
+    end
+
+    DI --> HC & HR
+    EJ --> HW
+    HC --> LP & SE
+    HW --> LP
+    ME --> CP & LP & SE
+    PE -. "solo si las reglas no bastan" .-> LLM["LLM gratuito<br/>OpenRouter"]
+    RE -. "preguntas abiertas" .-> LLM
+
+    classDef nodo fill:#e8eef7,stroke:#12355b,color:#12355b
+    classDef humano fill:#fff6e0,stroke:#e0a100
+    class PE,DI,PL,EJ,RE,ME nodo
+    class HI,F humano

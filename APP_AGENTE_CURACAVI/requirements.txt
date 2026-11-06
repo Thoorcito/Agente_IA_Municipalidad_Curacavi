@@ -1,0 +1,29 @@
+# Versiones probadas el 04-11-2026 (Python 3.10+). Rangos acotados para que pip no instale versiones mayores incompatibles.
+# Framework del agente
+langchain>=1.4,<2
+langchain-core>=1.7,<2
+langgraph>=1.2,<2
+langgraph-checkpoint-sqlite>=3.1,<4
+langchain-openai>=1.7,<2
+langchain-text-splitters>=1.1,<2
+# Memoria semántica
+langchain-chroma>=1.1,<2
+chromadb>=1.5,<2
+langchain-huggingface>=1.2,<2
+sentence-transformers>=3.0
+rank-bm25==0.2.2
+# PostgreSQL + pgvector (adaptadores de Docker) y memoria de conversaciones en PostgreSQL
+psycopg[binary]>=3.2,<4
+psycopg-pool>=3.2,<4
+langgraph-checkpoint-postgres>=3.0,<4
+# Datos y utilidades
+pypdf>=6.0
+holidays>=0.100
+pandas>=2.2
+python-dotenv>=1.0
+matplotlib>=3.8
+# Interfaz
+streamlit>=1.50
+# Pruebas
+pytest>=8.0
+pytest-cov>=5.0

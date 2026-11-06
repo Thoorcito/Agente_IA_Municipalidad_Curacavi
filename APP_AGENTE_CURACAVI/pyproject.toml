@@ -1,0 +1,22 @@
+[project]
+name = "agente-tramites-curacavi"
+version = "1.0.0"
+description = "Agente de IA que gestiona trámites municipales de la Municipalidad de Curacaví (prototipo académico)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov --cov-report=term-missing --cov-report=html:htmlcov"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]
+markers = ["integracion: prueba contra PostgreSQL + pgvector real (requiere DATABASE_URL_TEST)"]
+
+[tool.coverage.run]
+source = ["agente", "scripts"]
+# La interfaz Streamlit (app.py) y los scripts de capturas y diagramas se verifican visualmente
+# (EVIDENCIAS_TEST/capturas y EVIDENCIAS_TEST/diagramas), no con pytest.
+omit = ["scripts/capturas.py", "scripts/diagrama_arquitectura.py", "scripts/diagrama_hexagonal.py"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = false

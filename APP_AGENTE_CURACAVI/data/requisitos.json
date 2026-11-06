@@ -1,0 +1,143 @@
+{
+  "_descripcion": "Requisitos por trámite. Cada requisito declara su fundamento con el tipo de fuente: 'legal' (ley), 'municipal' (guía o página municipal) u 'orientativo' (ChileAtiende). Solo los de tipo 'documento' y obligatorios se exigen al verificar; las 'etapas' se informan, pero no se piden como documento.",
+  "tramites": {
+    "permiso_circulacion": {
+      "nombre": "Renovación del permiso de circulación (vehículo particular)",
+      "unidad": "Dirección de Tránsito y Transporte Público",
+      "requiere_hora": false,
+      "valor": "Según tasación fiscal del SII (impuesto anual por permiso de circulación)",
+      "fuente_principal": "guia_permiso_circulacion",
+      "requisitos": [
+        {"id": "permiso_anterior", "nombre": "Permiso de circulación del año anterior", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["permiso anterior", "permiso del año anterior", "permiso del ano anterior", "permiso de circulacion anterior", "permiso del año pasado", "permiso del ano pasado", "permiso de circulacion del año pasado"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_permiso_circulacion", "detalle": "Documentación: «Permiso de circulación año anterior»"},
+           {"tipo": "legal", "fuente": "dl_3063", "articulo": "16", "detalle": "No puede renovarse el permiso sin acreditar el pago total del impuesto del año anterior"}
+         ]},
+        {"id": "revision_tecnica", "nombre": "Revisión técnica al día (u homologación)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["revision tecnica", "revisión técnica", "homologacion", "homologación"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_permiso_circulacion", "detalle": "Documentación: «Revisión Técnica al día u homologación»"},
+           {"tipo": "orientativo", "fuente": "chileatiende_permiso", "detalle": "Vehículos usados: certificado de homologación o revisión técnica vigente"}
+         ]},
+        {"id": "certificado_gases", "nombre": "Certificado de gases al día (u homologación)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["certificado de gases", "gases", "analisis de gases", "análisis de gases"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_permiso_circulacion", "detalle": "Documentación: «Certificado de gases al día u homologación»"}
+         ]},
+        {"id": "soap", "nombre": "Seguro Obligatorio de Accidentes Personales (SOAP)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["soap", "seguro obligatorio", "seguro"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_permiso_circulacion", "detalle": "Documentación: «Seguro obligatorio de accidentes personales»"},
+           {"tipo": "orientativo", "fuente": "chileatiende_permiso", "detalle": "El SOAP es necesario para obtener el permiso de circulación"}
+         ]},
+        {"id": "padron", "nombre": "Tarjeta de dominio o padrón", "tipo": "documento", "obligatorio": false,
+         "sinonimos": ["padron", "padrón", "tarjeta de dominio"],
+         "fundamentos": [
+           {"tipo": "orientativo", "fuente": "chileatiende_permiso", "detalle": "ChileAtiende lo menciona para vehículos usados; la guía municipal no lo exige"}
+         ]}
+      ]
+    },
+    "primera_licencia_b": {
+      "nombre": "Primera licencia de conducir clase B",
+      "unidad": "Dirección de Tránsito y Transporte Público",
+      "requiere_hora": true,
+      "valor": "0,53 UTM (según guía municipal)",
+      "fuente_principal": "guia_licencias",
+      "requisitos": [
+        {"id": "cedula", "nombre": "Copia de la cédula de identidad vigente (ambos lados)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["cedula", "cédula", "carnet", "carnet de identidad"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Copia de la cédula de identidad vigente"}]},
+        {"id": "residencia", "nombre": "Acreditación de residencia en la comuna (certificado de junta de vecinos o declaración jurada ante notario)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["residencia", "junta de vecinos", "certificado de residencia", "declaracion jurada", "declaración jurada", "comprobante de domicilio"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Acreditar residencia en la comuna"}]},
+        {"id": "estudios", "nombre": "Certificado de estudios de 8° básico aprobado", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["certificado de estudios", "8 basico", "8° básico", "octavo basico", "octavo básico", "estudios"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Certificado de estudios 8° básico aprobado"}]},
+        {"id": "antecedentes", "nombre": "Certificado de antecedentes para licencia de conducir (30 días de vigencia)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["certificado de antecedentes", "antecedentes"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Certificado de antecedentes con duración de 30 días"}]},
+        {"id": "fotos", "nombre": "Dos fotos tamaño carnet (40 x 30 mm, fondo blanco)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["fotos", "fotografias", "fotografías", "foto carnet", "fotos carnet"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Dos fotos tipo carnet"}]},
+        {"id": "examenes", "nombre": "Aprobar los exámenes médico, teórico y práctico", "tipo": "etapa", "obligatorio": true,
+         "sinonimos": [],
+         "fundamentos": [
+           {"tipo": "legal", "fuente": "ley_18290", "articulo": "13", "detalle": "Requisitos generales: idoneidad física y psíquica y conocimientos teóricos y prácticos de conducción"},
+           {"tipo": "municipal", "fuente": "guia_licencias", "detalle": "La entrega queda condicionada a la aprobación de los exámenes"}
+         ]},
+        {"id": "vehiculo", "nombre": "Presentarse al examen práctico con un vehículo clase B con documentación al día", "tipo": "etapa", "obligatorio": true,
+         "sinonimos": [],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Para el examen práctico clase B debe traer su vehículo"}]}
+      ]
+    },
+    "renovacion_licencia": {
+      "nombre": "Renovación (control) de licencia de conducir",
+      "unidad": "Dirección de Tránsito y Transporte Público",
+      "requiere_hora": true,
+      "valor": "0,53 UTM (según guía municipal)",
+      "fuente_principal": "guia_licencias",
+      "requisitos": [
+        {"id": "cedula", "nombre": "Copia de la cédula de identidad vigente (ambos lados)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["cedula", "cédula", "carnet", "carnet de identidad"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Copia de la cédula de identidad vigente"},
+           {"tipo": "orientativo", "fuente": "chileatiende_licencias", "detalle": "Presentar licencia anterior y cédula de identidad"}
+         ]},
+        {"id": "licencia_anterior", "nombre": "Licencia de conducir anterior", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["licencia anterior", "licencia vencida", "licencia actual", "mi licencia"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Licencia de conducir anterior"},
+           {"tipo": "orientativo", "fuente": "chileatiende_licencias", "detalle": "Presentar licencia anterior"}
+         ]},
+        {"id": "domicilio", "nombre": "Documento que acredite el domicilio actual", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["domicilio", "comprobante de domicilio", "residencia", "junta de vecinos"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Documento que acredite su domicilio actual"}]},
+        {"id": "antecedentes", "nombre": "Certificado de antecedentes para licencia de conducir (30 días de vigencia)", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["certificado de antecedentes", "antecedentes"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Certificado de antecedentes con duración de 30 días"}]},
+        {"id": "examen_medico", "nombre": "Examen médico (sensométrico, psicométrico y entrevista)", "tipo": "etapa", "obligatorio": true,
+         "sinonimos": [],
+         "fundamentos": [
+           {"tipo": "legal", "fuente": "ley_18290", "articulo": "19", "detalle": "Control periódico de la licencia"},
+           {"tipo": "municipal", "fuente": "guia_licencias", "detalle": "Examen médico: sensométrico, psicométrico y entrevista médica"}
+         ]}
+      ]
+    },
+    "patente_comercial": {
+      "nombre": "Obtención de patente comercial",
+      "unidad": "DIAFI - Oficina de Rentas y Patentes",
+      "requiere_hora": false,
+      "valor": "Contribución de patente municipal según capital propio declarado",
+      "fuente_principal": "guia_patentes",
+      "requisitos": [
+        {"id": "cedula", "nombre": "Cédula de identidad", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["cedula", "cédula", "carnet"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_patentes", "detalle": "Documentos: 1.- Cédula de Identidad"}]},
+        {"id": "inicio_actividades", "nombre": "Inicio de actividades ante el SII", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["inicio de actividades", "iniciacion de actividades", "iniciación de actividades"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_patentes", "detalle": "Documentos: 2.- Inicio de Actividades ante el S.I.I."}]},
+        {"id": "contrato_local", "nombre": "Contrato de arriendo o escritura de propiedad del local", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["contrato de arriendo", "arriendo", "escritura", "escritura del local"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_patentes", "detalle": "Documentos: 3.- Contrato de arriendo o escritura de propiedad del local comercial"}]},
+        {"id": "declaracion_capital", "nombre": "Declaración jurada de capital propio", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["declaracion jurada de capital", "declaración jurada de capital", "capital propio", "declaracion de capital"],
+         "fundamentos": [
+           {"tipo": "municipal", "fuente": "guia_patentes", "detalle": "Documentos: 4.- Declaración Jurada de Capital"},
+           {"tipo": "legal", "fuente": "dl_3063", "articulo": "26", "detalle": "Quien inicie un giro gravado presentará una declaración jurada simple del capital propio"}
+         ]},
+        {"id": "vb_dom", "nombre": "Visto bueno de la Dirección de Obras Municipales y certificado de emplazamiento", "tipo": "documento", "obligatorio": true,
+         "sinonimos": ["dom", "direccion de obras", "dirección de obras", "emplazamiento", "visto bueno"],
+         "fundamentos": [{"tipo": "municipal", "fuente": "guia_patentes", "detalle": "Documentos: 5.- V°B° Dirección de Obras Municipales y certificado de emplazamiento"}]}
+      ]
+    },
+    "reclamo": {
+      "nombre": "Reclamo por atención (OIRS)",
+      "unidad": "Oficina de Informaciones, Reclamos y Sugerencias (OIRS)",
+      "requiere_hora": false,
+      "valor": "Sin costo",
+      "fuente_principal": "procedimiento_simulado",
+      "requisitos": []
+    }
+  }
+}

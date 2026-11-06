@@ -1,0 +1,16 @@
+flowchart TB
+    L["Nivel 1 · Normativa nacional [L]<br/>Ley 19.880 · Ley 18.695 · D.L. 3.063 · Ley 18.290<br/><i>establece</i> · obligatoria"]
+    N["Nivel 2 · Normativa municipal [N]<br/>ordenanzas, reglamentos municipales,<br/>decretos alcaldicios, instrucciones (Ley 18.695, art. 12)<br/><i>fija</i> · no incorporada en este prototipo"]
+    M["Nivel 3 · Información municipal [M]<br/>guías de trámites de Transparencia, página de patentes<br/><i>informa</i> · aplica la norma"]
+    O["Nivel 4 · Orientación general [O]<br/>fichas ChileAtiende<br/><i>orienta</i> · no normativa"]
+    S["Documento simulado [S]<br/>procedimiento interno de atención<br/><i>indica (simulado)</i>"]
+    L --> N --> M --> O
+    M -.-> S
+    classDef ley fill:#e3ecfa,stroke:#12355b
+    classDef mun fill:#e6f4ea,stroke:#1e6b34
+    classDef ori fill:#f1e8fb,stroke:#5b2b8a
+    classDef sim fill:#f0f0f0,stroke:#777,stroke-dasharray: 4 3
+    class L ley
+    class N,M mun
+    class O ori
+    class S sim

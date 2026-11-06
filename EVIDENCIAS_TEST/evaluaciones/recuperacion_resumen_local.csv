@@ -1,0 +1,5 @@
+configuracion,recall,hit,mrr,rechazo_fuera_de_tema,n_preguntas
+A. Diseño base,0.75,0.929,0.58,1.0,14
+B. + leyes acotadas y fuentes separadas,0.845,0.929,0.696,1.0,14
+C. + umbral por índice,0.917,1.0,0.711,1.0,14
+D. + búsqueda híbrida y prioridad por trámite,0.929,1.0,0.851,1.0,14

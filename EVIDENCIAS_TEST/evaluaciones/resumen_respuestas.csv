@@ -1,0 +1,9 @@
+,promedio,n
+herramienta_correcta,1.0,18.0
+cita_fuentes,1.0,18.0
+cita_valida,1.0,18.0
+tipo_fuente_correcto,1.0,14.0
+privacidad,1.0,2.0
+correctness,0.66,12.0
+faithfulness,0.67,12.0
+latencia_s,9.44,18.0

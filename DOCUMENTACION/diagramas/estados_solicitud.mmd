@@ -1,0 +1,11 @@
+stateDiagram-v2
+    [*] --> Observada: registrar_solicitud\n(faltan antecedentes, R6)
+    [*] --> Ingresada: registrar_solicitud\n(antecedentes completos, R8/R9)
+    Observada --> Ingresada: actualizar_solicitud\n(el vecino aporta lo que faltaba)
+    Ingresada --> EnRevision: unidad responsable
+    EnRevision --> Aprobada
+    EnRevision --> Rechazada
+    Ingresada --> Escalada: plazo vencido (R3)\n+ aprobación humana
+    Aprobada --> Cerrada
+    EnRevision: En revisión
+    Escalada: Escalada (ticket)

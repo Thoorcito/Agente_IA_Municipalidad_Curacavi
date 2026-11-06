@@ -1,0 +1,66 @@
+# Agente de Trámites · Municipalidad de Curacaví  (ejecutar desde la RAÍZ del repositorio)
+#
+#   docker compose up --build          -> base de datos + agente en http://localhost:8501
+#   docker compose run --rm tests      -> todas las pruebas, incluidas las de PostgreSQL + pgvector
+#   docker compose down                -> detiene todo (los datos quedan en el volumen pgdata)
+#   docker compose down -v             -> detiene y BORRA la base y el modelo descargado
+#
+# Las claves (OPENROUTER_API_KEY y, opcional, GEMINI_API_KEY) se leen del archivo .env, que nunca se sube al repositorio.
+name: agente-tramites-curacavi
+
+services:
+  db:
+    # PostgreSQL 16 con la extensión pgvector ya instalada
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: curacavi
+      POSTGRES_PASSWORD: curacavi
+      POSTGRES_DB: curacavi
+      TZ: America/Santiago
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./APP_AGENTE_CURACAVI/db/init:/docker-entrypoint-initdb.d:ro    # activa pgvector y crea la base de pruebas (solo la 1.ª vez)
+    ports:
+      - "5433:5432"     # para inspeccionar la base desde el computador (DBeaver, pgAdmin): localhost:5433
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U curacavi -d curacavi"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build:
+      context: .                                # el repositorio completo
+      dockerfile: APP_AGENTE_CURACAVI/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PERSISTENCIA: postgres
+      DATABASE_URL: postgresql://curacavi:curacavi@db:5432/curacavi
+    volumes:
+      - modelos:/modelos        # el modelo de embeddings se descarga una sola vez
+    ports:
+      - "8501:8501"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  tests:
+    build:
+      context: .
+      dockerfile: APP_AGENTE_CURACAVI/Dockerfile
+    profiles: ["tests"]         # no arranca con "up"; se ejecuta con "docker compose run --rm tests"
+    environment:
+      PERSISTENCIA: local
+      LLM_PROVIDER: offline
+      EMBEDDINGS_PROVIDER: offline
+      DATABASE_URL_TEST: postgresql://curacavi:curacavi@db:5432/curacavi_test
+    command: ["pytest"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  modelos:

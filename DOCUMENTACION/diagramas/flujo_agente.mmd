@@ -1,0 +1,13 @@
+flowchart TD
+    A([Mensaje del vecino]) --> B["percibir"]
+    B --> C["diagnosticar<br/>historial · estado del folio · plazo ·<br/>requisitos · agenda · casos similares"]
+    C --> D["planificar<br/>primera regla que se cumple (R1 → R10)"]
+    D -->|"R3: escalamiento"| E{{"aprobación humana<br/>el grafo se pausa"}}
+    D -->|resto| F["ejecutar pasos"]
+    E -->|aprobado| F
+    E -->|rechazado| F2["solo informar"]
+    F -->|"agendar_hora falló:<br/>la hora ya no estaba"| C
+    F --> G["responder"]
+    F2 --> G
+    G --> H["memorizar<br/>decisión · caso resuelto · resumen"]
+    H --> I([Respuesta con fuentes])

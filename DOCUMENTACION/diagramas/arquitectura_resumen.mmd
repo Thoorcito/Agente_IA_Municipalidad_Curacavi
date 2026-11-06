@@ -1,0 +1,15 @@
+flowchart LR
+    V([Vecino/a]) --> UI["Streamlit<br/>controlador"] --> PE["percibir"] --> DI["diagnosticar"] --> PL["planificar<br/>10 reglas"] --> EJ["ejecutar"] --> RE["responder<br/>citas por nivel"] --> ME["memorizar"]
+    PL -. "escalamiento" .-> HI{{"aprobación<br/>humana"}} -.-> EJ
+    EJ -. "condición cambió:<br/>replanificar" .-> DI
+    DI --- T1["Consulta (7)<br/>Razonamiento (4)"]
+    EJ --- T2["Escritura (6)"]
+    T1 --- DB[("Registro municipal<br/>PostgreSQL · SQLite")]
+    T1 --- CH[("pgvector · Chroma<br/>leyes · municipal ·<br/>chileatiende · casos")]
+    ME --- CP[("Checkpointer<br/>PostgreSQL · SQLite")]
+    PE -. "si no bastan las reglas" .-> LLM["LLM<br/>OpenRouter"]
+    RE -. "preguntas abiertas" .-> LLM
+    classDef n fill:#e8eef7,stroke:#12355b,color:#12355b
+    classDef h fill:#fff6e0,stroke:#e0a100
+    class PE,DI,PL,EJ,RE,ME n
+    class HI h

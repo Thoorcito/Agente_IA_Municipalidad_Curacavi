@@ -1,0 +1,73 @@
+configuracion,id,recall,hit,mrr,n_fragmentos,fuentes,rechazo_correcto
+A. Diseño base,P01,0.5,1.0,0.125,8,"curacavi_licencias_conducir.pdf, ley_18290_transito.pdf, curacavi_permiso_circulacion.pdf",
+A. Diseño base,P02,0.6666666666666666,1.0,1.0,8,"chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf",
+A. Diseño base,P03,1.0,1.0,1.0,8,"curacavi_patentes_municipales.pdf, curacavi_patente_comercial_web.md, dl_3063_rentas_municipales.pdf",
+A. Diseño base,P04,0.5,1.0,0.3333333333333333,8,"ley_18290_transito.pdf, curacavi_licencias_conducir.pdf",
+A. Diseño base,P07,1.0,1.0,0.25,8,"ley_18695_municipalidades.pdf, ley_18290_transito.pdf, ley_19880_procedimientos.pdf, curacavi_permiso_circulacion.pdf, procedimiento_atencion_SIMULADO.md, curacavi_licencias_conducir.pdf",
+A. Diseño base,P09,0.0,0.0,0.0,2,"dl_3063_rentas_municipales.pdf, ley_18695_municipalidades.pdf",
+A. Diseño base,P11,1.0,1.0,1.0,5,"ley_18695_municipalidades.pdf, curacavi_patentes_municipales.pdf",
+A. Diseño base,P12,1.0,1.0,0.5,8,"ley_18695_municipalidades.pdf, ley_19880_procedimientos.pdf, curacavi_licencias_conducir.pdf, ley_18290_transito.pdf, curacavi_permiso_circulacion.pdf",
+A. Diseño base,P13,1.0,1.0,1.0,7,"ley_19880_procedimientos.pdf, curacavi_patente_comercial_web.md, procedimiento_atencion_SIMULADO.md, curacavi_patentes_municipales.pdf",
+A. Diseño base,P14,1.0,1.0,0.3333333333333333,6,"ley_18695_municipalidades.pdf, dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf, curacavi_patentes_municipales.pdf",
+A. Diseño base,P15,0.5,1.0,1.0,8,"ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf",
+A. Diseño base,P16,1.0,1.0,0.3333333333333333,8,"chileatiende_licencias_conducir.pdf, ley_18290_transito.pdf, chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_permiso_circulacion.pdf, curacavi_licencias_conducir.pdf",
+A. Diseño base,P17,1.0,1.0,1.0,8,"curacavi_licencias_conducir.pdf, ley_18290_transito.pdf, chileatiende_licencias_conducir.pdf",
+A. Diseño base,P18,0.3333333333333333,1.0,0.25,8,"ley_18290_transito.pdf, chileatiende_licencias_conducir.pdf, dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf",
+A. Diseño base,NEG,,,,0,,1.0
+A. Diseño base,NEG,,,,0,,1.0
+A. Diseño base,NEG,,,,0,,1.0
+A. Diseño base,NEG,,,,0,,1.0
+B. + leyes acotadas y fuentes separadas,P01,1.0,1.0,0.25,12,"curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf, dl_3063_rentas_municipales.pdf, ley_18290_transito.pdf, chileatiende_permiso_circulacion.pdf",
+B. + leyes acotadas y fuentes separadas,P02,0.6666666666666666,1.0,1.0,12,"chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf",
+B. + leyes acotadas y fuentes separadas,P03,1.0,1.0,1.0,8,"curacavi_patentes_municipales.pdf, curacavi_patente_comercial_web.md, dl_3063_rentas_municipales.pdf",
+B. + leyes acotadas y fuentes separadas,P04,1.0,1.0,0.3333333333333333,10,"ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf",
+B. + leyes acotadas y fuentes separadas,P07,1.0,1.0,1.0,10,"ley_19880_procedimientos.pdf, dl_3063_rentas_municipales.pdf, ley_18695_municipalidades.pdf, curacavi_permiso_circulacion.pdf, procedimiento_atencion_SIMULADO.md, chileatiende_licencias_conducir.pdf, curacavi_licencias_conducir.pdf",
+B. + leyes acotadas y fuentes separadas,P09,0.0,0.0,0.0,0,,
+B. + leyes acotadas y fuentes separadas,P11,1.0,1.0,1.0,5,"ley_18695_municipalidades.pdf, curacavi_patentes_municipales.pdf",
+B. + leyes acotadas y fuentes separadas,P12,1.0,1.0,1.0,10,"ley_19880_procedimientos.pdf, curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf, ley_18695_municipalidades.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+B. + leyes acotadas y fuentes separadas,P13,1.0,1.0,1.0,7,"ley_19880_procedimientos.pdf, curacavi_patente_comercial_web.md, procedimiento_atencion_SIMULADO.md, curacavi_patentes_municipales.pdf",
+B. + leyes acotadas y fuentes separadas,P14,1.0,1.0,1.0,8,"dl_3063_rentas_municipales.pdf, ley_18695_municipalidades.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, curacavi_patentes_municipales.pdf",
+B. + leyes acotadas y fuentes separadas,P15,0.5,1.0,0.3333333333333333,12,"curacavi_licencias_conducir.pdf, ley_18290_transito.pdf, chileatiende_permiso_circulacion.pdf, curacavi_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf",
+B. + leyes acotadas y fuentes separadas,P16,1.0,1.0,0.5,12,"chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, ley_18290_transito.pdf, curacavi_permiso_circulacion.pdf, curacavi_licencias_conducir.pdf",
+B. + leyes acotadas y fuentes separadas,P17,1.0,1.0,1.0,12,"curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, ley_18290_transito.pdf",
+B. + leyes acotadas y fuentes separadas,P18,0.6666666666666666,1.0,0.3333333333333333,12,"chileatiende_licencias_conducir.pdf, dl_3063_rentas_municipales.pdf, ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+B. + leyes acotadas y fuentes separadas,NEG,,,,0,,1.0
+B. + leyes acotadas y fuentes separadas,NEG,,,,0,,1.0
+B. + leyes acotadas y fuentes separadas,NEG,,,,0,,1.0
+B. + leyes acotadas y fuentes separadas,NEG,,,,0,,1.0
+C. + umbral por índice,P01,1.0,1.0,0.25,12,"curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf, dl_3063_rentas_municipales.pdf, ley_18290_transito.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P02,0.6666666666666666,1.0,1.0,12,"chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf",
+C. + umbral por índice,P03,1.0,1.0,1.0,12,"curacavi_patentes_municipales.pdf, curacavi_patente_comercial_web.md, dl_3063_rentas_municipales.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P04,1.0,1.0,0.3333333333333333,12,"ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P07,1.0,1.0,1.0,12,"ley_19880_procedimientos.pdf, dl_3063_rentas_municipales.pdf, ley_18695_municipalidades.pdf, curacavi_permiso_circulacion.pdf, procedimiento_atencion_SIMULADO.md, chileatiende_licencias_conducir.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P09,1.0,1.0,0.2,9,"dl_3063_rentas_municipales.pdf, curacavi_patentes_municipales.pdf, chileatiende_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf",
+C. + umbral por índice,P11,1.0,1.0,1.0,12,"ley_18695_municipalidades.pdf, curacavi_patentes_municipales.pdf, procedimiento_atencion_SIMULADO.md, curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P12,1.0,1.0,1.0,12,"ley_19880_procedimientos.pdf, curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf, ley_18695_municipalidades.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P13,1.0,1.0,1.0,12,"ley_19880_procedimientos.pdf, curacavi_patente_comercial_web.md, procedimiento_atencion_SIMULADO.md, curacavi_patentes_municipales.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,P14,1.0,1.0,1.0,12,"dl_3063_rentas_municipales.pdf, ley_18695_municipalidades.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, curacavi_patentes_municipales.pdf, procedimiento_atencion_SIMULADO.md, chileatiende_licencias_conducir.pdf",
+C. + umbral por índice,P15,0.5,1.0,0.3333333333333333,12,"curacavi_licencias_conducir.pdf, ley_18290_transito.pdf, chileatiende_permiso_circulacion.pdf, curacavi_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf",
+C. + umbral por índice,P16,1.0,1.0,0.5,12,"chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, ley_18290_transito.pdf, curacavi_permiso_circulacion.pdf, curacavi_licencias_conducir.pdf",
+C. + umbral por índice,P17,1.0,1.0,1.0,12,"curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, ley_18290_transito.pdf",
+C. + umbral por índice,P18,0.6666666666666666,1.0,0.3333333333333333,12,"chileatiende_licencias_conducir.pdf, dl_3063_rentas_municipales.pdf, ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+C. + umbral por índice,NEG,,,,0,,1.0
+C. + umbral por índice,NEG,,,,0,,1.0
+C. + umbral por índice,NEG,,,,0,,1.0
+C. + umbral por índice,NEG,,,,0,,1.0
+D. + búsqueda híbrida y prioridad por trámite,P01,1.0,1.0,0.3333333333333333,12,"curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_patentes_municipales.pdf, chileatiende_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P02,1.0,1.0,1.0,12,"chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P03,1.0,1.0,1.0,12,"curacavi_patentes_municipales.pdf, curacavi_patente_comercial_web.md, dl_3063_rentas_municipales.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P04,1.0,1.0,0.3333333333333333,12,"ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P07,1.0,1.0,1.0,12,"ley_19880_procedimientos.pdf, procedimiento_atencion_SIMULADO.md, chileatiende_licencias_conducir.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P09,1.0,1.0,0.25,11,"dl_3063_rentas_municipales.pdf, curacavi_patentes_municipales.pdf, chileatiende_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf, procedimiento_atencion_SIMULADO.md",
+D. + búsqueda híbrida y prioridad por trámite,P11,1.0,1.0,1.0,12,"ley_18695_municipalidades.pdf, dl_3063_rentas_municipales.pdf, curacavi_patentes_municipales.pdf, procedimiento_atencion_SIMULADO.md, curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P12,1.0,1.0,1.0,12,"ley_19880_procedimientos.pdf, curacavi_licencias_conducir.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, procedimiento_atencion_SIMULADO.md",
+D. + búsqueda híbrida y prioridad por trámite,P13,0.5,1.0,1.0,12,"ley_19880_procedimientos.pdf, curacavi_patente_comercial_web.md, curacavi_patentes_municipales.pdf, ley_18290_transito.pdf, chileatiende_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P14,1.0,1.0,1.0,12,"dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, curacavi_patentes_municipales.pdf, chileatiende_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P15,0.5,1.0,1.0,12,"ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, curacavi_permiso_circulacion.pdf, chileatiende_licencias_conducir.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P16,1.0,1.0,1.0,12,"chileatiende_permiso_circulacion.pdf, dl_3063_rentas_municipales.pdf, curacavi_permiso_circulacion.pdf, ley_18290_transito.pdf, curacavi_licencias_conducir.pdf, curacavi_patentes_municipales.pdf, procedimiento_atencion_SIMULADO.md",
+D. + búsqueda híbrida y prioridad por trámite,P17,1.0,1.0,1.0,12,"curacavi_licencias_conducir.pdf, ley_18290_transito.pdf, chileatiende_licencias_conducir.pdf",
+D. + búsqueda híbrida y prioridad por trámite,P18,1.0,1.0,1.0,12,"dl_3063_rentas_municipales.pdf, curacavi_licencias_conducir.pdf, chileatiende_permiso_circulacion.pdf, curacavi_permiso_circulacion.pdf",
+D. + búsqueda híbrida y prioridad por trámite,NEG,,,,0,,1.0
+D. + búsqueda híbrida y prioridad por trámite,NEG,,,,0,,1.0
+D. + búsqueda híbrida y prioridad por trámite,NEG,,,,0,,1.0
+D. + búsqueda híbrida y prioridad por trámite,NEG,,,,0,,1.0
